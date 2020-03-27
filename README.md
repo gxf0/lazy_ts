@@ -10,8 +10,9 @@ If you don't need this server to be up the whole time, and just want to set up f
 You can either clone the completely repo, or just download the scripts you need.
 
 ```
-wget https://github.com/gxf0/lazy_pi/blob/master/scripts/lazy_ts
-chmod +x lazy_ts
+git clone https://github.com/gxf0/lazy_ts.git 
+cd lazy_ts
+chmod +x lazy_ts 
 ./lazy_ts
 ```
 
