@@ -25,9 +25,9 @@ to also adjust the correspondingly tar command, if you change the file.tar.bz2.
 ts_user="teamspeak"  
 ts_dir="/opt/teamspeak"  
 
-ts_download="http://dl.4players.de/ts/releases/3.1.0/teamspeak3-server_linux_amd64-3.1.0.tar.bz2"
+ts_download="https://files.teamspeak-services.com/releases/server/3.12.0/teamspeak3-server_linux_amd64-3.12.0.tar.bz2"
 
-serverip=$(ip route get 8.8.8.8 | awk 'NR==1 {print $NF}')
+serverip=$(serverip=$(hostname -I | cut -d' ' -f1))
 ts_mail="false" # by default no mail will be send
 ```
 
