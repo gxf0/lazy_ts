@@ -23,7 +23,7 @@ out="/dev/null"
 mydir_ts="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 myname=$(basename $0)
 string="$@"
-serverip=$(ip route get 8.8.8.8 | awk 'NR==1 {print $NF}')
+serverip=$(hostname -I | cut -d' ' -f1)
 
 # Colors
 green='\e[92m'
@@ -98,15 +98,16 @@ usage() {
 
     Options:
        -e  --email    specify email to receive login
-       -k  --kill   delete server include all files
-       -s  --screen		show terminal output
-       -x  --debug		debug (dev-debug.log)
-       -h  --help		show this help
+       -k  --kill     delete server include all files
+       -s  --screen   show terminal output
+       -x  --debug    debug (dev-debug.log)
+       -h  --help     show this help
 
     Examples:
        Specify email :
        $myname -m<mail@domain.tld>
        $myname --mail<mail@domain.tld>
+
 EOF
 }
 
@@ -119,7 +120,7 @@ ts3_start() {
   echo -ne '\n'
 }
 
-install_ts3() {
+ts3_install() {
   adduser --disabled-password --gecos "" teamspeak > $out 2>&1
   mkdir ${ts_dir}
   wget $ts_download > $out 2>&1
@@ -241,16 +242,13 @@ ts3_end() {
     echo -e "  done (duration: $endtime seconds)"
     echo -e "=============================================${nc}"
     echo -ne '\n'
-    echo "$hostname was succesfully configured"
     echo ""
 }
 
 main() {
   cmdline $string
-  if [ "$xf0_installer" != true ]; then
-    ts3_start
-  fi
-  install_ts3
+  ts3_start
+  ts3_install
   ts3_login
   ts3_script
   ts3_run
