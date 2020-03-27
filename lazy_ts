@@ -3,10 +3,10 @@
 #################################################
 #
 # Lazy Ts3
-# Version 1.1
-# Copyright 2018, Veit <mail@geekmonkey.de>
+# Version 1.2
+# Copyright 2020, Veit <mail@geekmonkey.de>
 #
-# Tested: 14.03.2018
+# Last Update: 27.03.2020
 #
 #################################################
 
@@ -115,7 +115,7 @@ ts3_start() {
   starttime=$(date +%s)
   echo ""
   echo -e "${blue}============================================"
-  echo -e "  Lazy Teamspeak 3 Server:"
+  echo -e "  Lazy Server: Teamspeak 3"
   echo -e "============================================${nc}"
   echo -ne '\n'
 }
@@ -245,7 +245,7 @@ ts3_end() {
     echo ""
 }
 
-main() {
+do_ts3() {
   cmdline $string
   ts3_start
   ts3_install
@@ -263,4 +263,4 @@ main() {
   ts3_end
 }
 
-main
+do_ts3
