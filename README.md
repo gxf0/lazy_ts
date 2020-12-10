@@ -10,7 +10,7 @@ If you don't need this server to be up the whole time, and just want to set up f
 You can either clone the completely repo, or just download the scripts you need.
 
 ```
-git clone https://github.com/gxf0/lazy_ts.git 
+git clone https://github.com/xiaoveiti/lazy_ts.git 
 cd lazy_ts
 chmod +x lazy_ts 
 ./lazy_ts
@@ -58,7 +58,7 @@ ts3 <start|stop|restart|status>
 
 #### Author
 
-* **Veit** - [gxf0](https://github.com/gxf0)
+* **Veit** - [xiaoveiti](https://github.com/xiaoveiti)
 
 #### License
 
